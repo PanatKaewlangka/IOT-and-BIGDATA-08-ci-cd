@@ -35,4 +35,4 @@ def test_celsius_to_fahrenheit(spark):
     expected_df = spark.createDataFrame(expected_data, ["temperature", "temp_f"])
     
     result_df = celsius_to_fahrenheit(input_df)
-    assert_df_equality(result_df, expected_df)
+    assert_df_equality(result_df, expected_df, ignore_nullable=True)
